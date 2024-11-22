@@ -1,0 +1,201 @@
+.blogdetailspage {
+  .blogpost {
+    padding: calc(var(--height-header) + 56px) 0 120px 0;
+    &__title {
+      padding: 0 102px;
+      margin-bottom: 64px;
+      .author {
+        margin-bottom: 34px;
+      }
+      .textbox {
+        .desc {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    &__img {
+      margin-bottom: 45px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &__detail {
+      padding: 0 102px;
+      color: var(--cl-white);
+      h2 {
+        font-family: dmb;
+        font-size: 4.2rem;
+        letter-spacing: -0.042rem;
+        line-height: 5.5rem;
+        margin-bottom: 40px;
+      }
+      h3 {
+        margin: 45px 0 24px;
+        font-family: dmb;
+        font-size: 2.8rem;
+        letter-spacing: 0.028rem;
+        line-height: 3rem;
+      }
+      p {
+        strong {
+          font-family: dmb;
+        }
+        a {
+          color: var(--cl-white);
+          position: relative;
+          @include transition(var(--transition));
+          &::after {
+            @include transition(var(--transition));
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: var(--cl-white);
+            left: 0;
+            bottom: 0;
+          }
+          &:hover {
+            color: var(--cl-primary);
+          }
+          &:hover::after {
+            background-color: var(--cl-primary);
+          }
+        }
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+      }
+      ul {
+        margin-top: -16px;
+        li {
+          position: relative;
+          padding-left: 28px;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 100%;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--cl-white);
+          }
+        }
+      }
+      blockquote {
+        margin-top: 45px;
+        padding: 40px 50px;
+        background-color: var(--cl-dark-blue-2);
+        border-radius: 30px;
+        font-size: 2.2rem;
+        line-height: 3.8rem;
+        letter-spacing: 0px;
+        font-family: dmm;
+      }
+
+      figure {
+        margin-top: 45px;
+        figcaption {
+          text-align: center;
+          font-family: dmi;
+          margin-top: 22px;
+        }
+      }
+
+      &-social {
+        margin-top: 56px;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        justify-content: flex-end;
+        span {
+          text-transform: capitalize;
+        }
+        .wrapper {
+          display: flex;
+          gap: 12px;
+        }
+      }
+    }
+
+    @include xs {
+      padding: calc(var(--height-header) + 48px) 0 80px 0;
+      &__title {
+        padding: initial;
+        margin-bottom: 32px;
+        .author {
+          margin-bottom: 32px;
+        }
+        .textbox {
+          h1 {
+            font-size: 2.8rem;
+            line-height: 3.6rem;
+            letter-spacing: 0;
+          }
+        }
+      }
+      &__img {
+        margin-bottom: 30px;
+      }
+      &__detail {
+        padding: initial;
+
+        h2 {
+          font-size: 2.8rem;
+          line-height: 3.6rem;
+          letter-spacing: 0px;
+          margin-bottom: 24px;
+        }
+        h3 {
+          font-size: 2.4rem;
+          line-height: 3.2rem;
+          letter-spacing: 0;
+          margin: 24px 0;
+        }
+        figure {
+          margin-top: 30px;
+          figcaption {
+            margin-top: 15px;
+            text-align: start;
+          }
+        }
+        blockquote {
+          margin-top: 30px;
+          padding: 32px;
+          font-size: 1.6rem;
+          line-height: 2.6rem;
+          letter-spacing: 0px;
+        }
+        &-social {
+          margin-top: 37px;
+        }
+      }
+    }
+  }
+
+  // sc sub
+  .sub {
+    padding: 84px 0;
+  }
+  // sc lastest
+  .lastestposts {
+    padding: 120px 0;
+    .textbox {
+      margin-bottom: 56px;
+    }
+
+    @include xs {
+      padding: 80px 0;
+      .textbox {
+        margin-bottom: 40px;
+        gap: var(--gutter);
+        .btnmain {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

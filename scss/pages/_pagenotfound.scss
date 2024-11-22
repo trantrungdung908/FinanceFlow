@@ -1,0 +1,54 @@
+.pagenotfound {
+  .content {
+    height: 100vh;
+    min-height: 720px;
+    @include mid(true);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    .textbox {
+      max-width: 557px;
+      margin: 0 auto;
+      .number {
+        color: var(--cl-primary);
+        font-size: 18rem;
+        font-family: dmb;
+        letter-spacing: 0px;
+        line-height: 16rem;
+      }
+      .heading {
+        margin: 16px 0;
+        text-transform: capitalize;
+      }
+    }
+    .wrapbtn {
+      margin-top: 40px;
+      @include mid(true);
+      gap: 24px;
+    }
+
+    @include xs {
+      overflow-y: scroll;
+      .textbox {
+        max-width: initial;
+        .number {
+          font-size: 12rem;
+          line-height: 12rem;
+        }
+        .heading {
+          margin: 32px 0 16px 0;
+        }
+      }
+      .wrapbtn {
+        flex-direction: column;
+        gap: 16px;
+        .btnmain {
+          width: 100%;
+        }
+      }
+      .blur {
+        max-width: initial;
+      }
+    }
+  }
+}

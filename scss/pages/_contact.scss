@@ -1,0 +1,254 @@
+.contactpage {
+  .getintouch {
+    padding: calc(var(--height-header) + 80px) 0 120px 0;
+    position: relative;
+    overflow: hidden;
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 0.5073fr;
+      gap: 64px;
+      margin-top: 52px;
+
+      &-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        .formitem {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          label {
+            margin-bottom: 12px;
+            color: var(--cl-white);
+            text-transform: uppercase;
+            font-family: dmb;
+          }
+          input {
+            padding: 0 25px;
+            height: 68px;
+            letter-spacing: 0;
+            line-height: 2.7rem;
+            background-color: var(--cl-dark-blue-2);
+            border-radius: 100px;
+            color: var(--cl-white);
+            font-size: var(--fs-body-small);
+            line-height: var(--lh-body-small);
+            letter-spacing: var(--ls-body-small);
+            font-family: dmr;
+            caret-color: var(--cl-white);
+            &.--error {
+              outline: 2px solid var(--cl-error);
+            }
+            &:focus {
+              outline: 1px solid var(--cl-white);
+            }
+            &::placeholder {
+              color: var(--cl-white);
+            }
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+              transition: background-color 5000s ease-in-out 0s;
+              -webkit-text-fill-color: var(--cl-white);
+            }
+          }
+          textarea {
+            background-color: var(--cl-dark-blue-2);
+            padding: 20px 25px 0 25px;
+            color: var(--cl-white);
+            resize: none;
+            outline: none;
+            height: 162px;
+            border-radius: 14px;
+            &::placeholder {
+              color: var(--cl-white);
+            }
+            &:focus {
+              outline: 1px solid var(--cl-white);
+            }
+            &.--error {
+              outline: 2px solid var(--cl-error);
+            }
+          }
+          &.--full {
+            grid-column: 1 / 3;
+          }
+          .texterror {
+            bottom: -15px;
+          }
+        }
+
+        .btnmain {
+          margin-top: 27px;
+        }
+      }
+      &-link {
+        .textbox {
+          .desc {
+            margin: 15px 0 36px 0;
+          }
+        }
+        .groupmail {
+          &__item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            a {
+              color: var(--cl-white);
+              @include transition(var(--transition));
+              &:hover {
+                color: var(--cl-primary);
+              }
+            }
+            &:not(:last-child) {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .blur {
+      top: 0%;
+      right: -20%;
+      transform: translateY(-50%);
+    }
+
+    @include xs {
+      padding: calc(var(--height-header) + 48px) 0 50px 0;
+
+      &__container {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+        gap: 48px;
+        &-form {
+          display: block;
+          .formitem {
+            &:not(:last-of-type) {
+              margin-bottom: 24px;
+            }
+          }
+          .btnmain {
+            margin-top: 32px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        &-link {
+          .textbox {
+            .desc {
+              margin: 19px 0 34px 0;
+            }
+          }
+        }
+      }
+
+      .blur {
+        top: 0%;
+        left: 0;
+        max-width: initial;
+      }
+    }
+  }
+
+  .faq {
+    padding-bottom: 120px;
+    .heading {
+      &.--h1 {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+    }
+    &__list {
+      max-width: 790px;
+      margin: 0 auto;
+      &-item {
+        padding-bottom: 32px;
+        border-bottom: 1px solid;
+        border-bottom-color: rgba(255, 255, 255, 0.2);
+        .question {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          .heading {
+            font-size: 2.8rem;
+            line-height: 3rem;
+            letter-spacing: 0.028rem;
+            flex: 1;
+          }
+          span {
+            position: relative;
+            @include size(27px, 2px);
+            background-color: var(--cl-white);
+            display: block;
+            @include transition(var(--transition));
+            &::after {
+              @include transition(var(--transition));
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 100%;
+              transform: rotate(90deg);
+              background-color: var(--cl-white);
+            }
+            &.--active {
+              height: 0;
+              &::after {
+                height: 2px;
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+        .answer {
+          color: var(--cl-white);
+          overflow: hidden;
+          max-height: 0;
+          margin-top: 0;
+          transition: max-height var(--transition), margin-top var(--transition);
+          cursor: default;
+        }
+        &:not(:first-child) {
+          padding-top: 32px;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    @include xs {
+      padding-bottom: 26px;
+      .heading {
+        &.--h1 {
+          margin-bottom: 32px;
+        }
+      }
+      &__list {
+        max-width: initial;
+        &-item {
+          padding-bottom: 24px;
+          .question {
+            .heading {
+              font-size: 1.8rem;
+              line-height: 2.6rem;
+              letter-spacing: 0.028rem;
+            }
+            span {
+              width: 18px;
+            }
+          }
+
+          &:not(:first-child) {
+            padding-top: 24px;
+          }
+        }
+      }
+    }
+  }
+}

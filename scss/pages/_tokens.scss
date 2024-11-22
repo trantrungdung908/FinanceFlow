@@ -1,0 +1,187 @@
+.tokenspage {
+  .tokens {
+    padding-top: calc(var(--height-header) + 60px);
+    padding-bottom: 120px;
+    .textbox {
+      max-width: 568px;
+      margin: 0 auto;
+      text-align: center;
+      .desc {
+        margin-top: 16px;
+      }
+    }
+
+    &__table {
+      margin-top: 101px;
+      display: block;
+      &-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 120px;
+        gap: var(--gap);
+        padding-bottom: 44px;
+        &:not(:first-child) {
+          padding-top: 44px;
+        }
+        align-items: center;
+        border-bottom: 1px solid;
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+        .title {
+          color: var(--cl-white);
+          text-transform: uppercase;
+          font-family: dmb;
+          font-size: 1.6rem;
+          letter-spacing: 0.1rem;
+          line-height: 1.8rem;
+        }
+        .wrapname {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          .name {
+            font-family: dmb;
+            font-size: 1.8rem;
+            letter-spacing: 0px;
+            line-height: 2rem;
+            text-transform: capitalize;
+            color: var(--cl-white);
+          }
+          span {
+            height: 26px;
+            padding: 0 8px;
+            background-color: var(--cl-dark-blue-2);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cl-white);
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            letter-spacing: 0.06rem;
+            font-family: dmm;
+          }
+        }
+        .desc,
+        .market,
+        .volume,
+        .link {
+          color: var(--cl-white);
+          font-size: 1.6rem;
+          letter-spacing: 0px;
+          line-height: 2.6rem;
+        }
+
+        .market,
+        .volume {
+          font-family: dmb;
+        }
+        .link {
+          width: max-content;
+          position: relative;
+          @include transition(var(--transition));
+          &:hover {
+            color: var(--cl-primary);
+          }
+          &:hover::after {
+            background-color: var(--cl-primary);
+          }
+          &::after {
+            @include transition(var(--transition));
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            content: "";
+            background-color: var(--cl-white);
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &__tablem {
+      display: none;
+      &-row {
+        padding: 32px 0;
+        border-bottom: 1px solid;
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+        .title-m {
+          font-family: dmb;
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          letter-spacing: 0.096rem;
+          line-height: 1.8rem;
+          color: var(--cl-white);
+          margin-bottom: 16px;
+        }
+        .wrapname-m {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          span {
+            height: 26px;
+            padding: 0 8px;
+            background-color: var(--cl-dark-blue-2);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cl-white);
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            letter-spacing: 0.06rem;
+            font-family: dmm;
+          }
+        }
+        p,
+        a {
+          font-family: dmb;
+          font-size: 1.6rem;
+          letter-spacing: 0px;
+          line-height: 2.6rem;
+          color: var(--cl-white);
+          &.--fr {
+            font-family: dmr;
+          }
+        }
+        .link {
+          width: max-content;
+          position: relative;
+          @include transition(var(--transition));
+          &:hover {
+            color: var(--cl-primary);
+          }
+          &:hover::after {
+            background-color: var(--cl-primary);
+          }
+          &::after {
+            @include transition(var(--transition));
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            content: "";
+            background-color: var(--cl-white);
+            left: 0;
+          }
+        }
+      }
+    }
+
+    @include xs {
+      padding-top: calc(var(--height-header) + 48px);
+      padding-bottom: 80px;
+      .textbox {
+        max-width: initial;
+        margin: initial;
+        text-align: left;
+      }
+      &__table {
+        display: none;
+      }
+      &__tablem {
+        margin-top: 48px;
+        display: block;
+      }
+    }
+  }
+}

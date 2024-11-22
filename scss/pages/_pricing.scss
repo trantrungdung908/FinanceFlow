@@ -1,0 +1,121 @@
+.pricingpage {
+  .pricing {
+    padding-top: calc(var(--height-header) + 40px);
+    padding-bottom: 225px;
+    .textbox {
+      max-width: 660px;
+      margin: 0 auto;
+      text-align: center;
+      .desc {
+        margin-top: 16px;
+      }
+    }
+
+    &__intro {
+      margin: 40px 0 56px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        .desc {
+          color: var(--cl-white);
+        }
+      }
+    }
+
+    &__card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gutter);
+      &-item {
+        padding: 48px 30px 42px 32px;
+        background-color: var(--cl-dark-blue-2);
+        border-radius: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .contenttop {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 40px;
+          flex: 1;
+          .tags {
+            position: relative;
+          }
+          .heading {
+            margin: 16px 0;
+            text-wrap: wrap;
+            word-break: break-all;
+          }
+          .desc {
+            color: var(--cl-white);
+            margin-top: auto;
+          }
+        }
+
+        .contentbottom {
+          .label {
+            font-size: var(--fs-label);
+            line-height: var(--lh-label);
+            letter-spacing: var(--ls-label);
+            color: var(--cl-white);
+            text-transform: uppercase;
+            font-family: dmb;
+            margin-bottom: 16px;
+          }
+
+          &__features {
+            &-item {
+              // margin-top: 6px;
+              color: var(--cl-white);
+              position: relative;
+              padding-left: 22px;
+
+              &::before {
+                @include size(6px, 6px, true);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: var(--cl-primary);
+                content: "";
+              }
+            }
+          }
+
+          .btnmain {
+            margin-top: 49px;
+            width: initial;
+          }
+        }
+      }
+    }
+
+    @include xs {
+      padding-top: calc(var(--height-header) + 48px);
+      padding-bottom: 80px;
+      .textbox {
+        max-width: 100%;
+        margin: initial;
+        text-align: start;
+      }
+
+      &__intro {
+        margin: 40px 0 48px 0;
+        display: block;
+        &-item {
+          &:not(:last-child) {
+            margin-bottom: 38px;
+          }
+        }
+      }
+
+      &__card {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

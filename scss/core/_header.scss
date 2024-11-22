@@ -1,0 +1,126 @@
+.header {
+  width: 100%;
+  height: var(--height-header);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  @include transition(var(--transition));
+  &.--scroll {
+    background: linear-gradient(var(--cl-dark-blue-2), transparent);
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &__left {
+    @include mid(true);
+    .logo {
+      margin-right: 32px;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 66px;
+        background-color: #010d50;
+        top: 50%;
+        right: -32px;
+        transform: translateY(-50%);
+      }
+    }
+    .menu {
+      margin-left: 32px;
+      @include mid(true);
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      li {
+        @include mid(true);
+        a {
+          padding: 5px 27px 5px 0;
+          &::after {
+            width: calc(100% - 28px);
+            bottom: 4px;
+          }
+          &:hover::after {
+            transform: scale(1);
+          }
+          &.--active::after {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    height: var(--height-button-small);
+  }
+
+  &__hamburger {
+    @include size(45px, 45px, true);
+    @include mid(true);
+    background-color: var(--cl-primary);
+    cursor: pointer;
+    display: none;
+    span {
+      @include size(25px, 2px);
+      @include transition(var(--transition));
+      background-color: var(--cl-white);
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 7px;
+        background-color: var(--cl-white);
+        @include transition(var(--transition));
+      }
+      &::before {
+        top: -7px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: "";
+        background-color: var(--cl-white);
+        @include transition(var(--transition));
+      }
+
+      &.--close {
+        background-color: transparent;
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include sm {
+    &__left {
+      .logo {
+        &::after {
+          display: none;
+        }
+      }
+      .menu {
+        display: none;
+      }
+    }
+    &__btn {
+      display: none;
+    }
+
+    &__hamburger {
+      display: flex;
+    }
+  }
+}

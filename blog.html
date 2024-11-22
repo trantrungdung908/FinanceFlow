@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến</title>
+
+    <meta
+      name="title"
+      content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến"
+    />
+    <meta
+      name="description"
+      content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle"
+    />
+    <meta name="keyword" content="" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến"
+    />
+    <meta
+      property="og:description"
+      content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle"
+    />
+    <meta property="og:url" content="https://cfdcircle.vn" />
+    <meta property="og:site_name" content="CFD Circle" />
+    <meta property="og:image" content="thumbnail-facebook" />
+
+    <!-- CSS loading -->
+    <style>
+      .loading {
+        background-color: var(--cl-dark-blue-1);
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        opacity: 1;
+        visibility: visible;
+      }
+      .loading.--loaded {
+        transition: var(--transition);
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loading .loading__progress {
+        width: 160px;
+        height: 4px;
+        background-color: var(--cl-white);
+        position: relative;
+      }
+      .loading .loading__progress .loading__progress-bg {
+        position: absolute;
+        background-color: var(--cl-primary);
+        width: 0;
+        height: 100%;
+      }
+      .loading .loading__percent {
+        font-family: dmb;
+        color: var(--cl-white);
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        letter-spacing: 0;
+      }
+      @media screen and (max-width: 767.98px) {
+        .loading .loading__progress {
+          width: 130px;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="./dist/style.min.css" />
+    <link rel="stylesheet" href="./dist/fonts.css" />
+  </head>
+  <body class="blogpage">
+    <!-- loading -->
+    <div class="loading">
+      <div class="loading__progress">
+        <span class="loading__progress-bg"></span>
+      </div>
+      <p class="loading__percent">0%</p>
+    </div>
+
+    <!-- progressbar -->
+    <div class="progressbar"></div>
+
+    <header class="header">
+      <div class="container">
+        <div class="header__left">
+          <a href="./index.html" class="logo">
+            <img src="./img/logo.svg" alt="" />
+          </a>
+
+          <ul class="menu">
+            <li><a class="--active" href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li><a href="./tokens.html">Tokens</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">contact us </a></li>
+          </ul>
+        </div>
+
+        <a
+          href="https://cfdcircle.vn/"
+          target="_blank"
+          class="btnmain header__btn"
+        >
+          Download App
+        </a>
+
+        <div class="header__hamburger">
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- navmobile -->
+    <nav class="menumobile">
+      <ul class="menu">
+        <li><a class="--active" href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+        <li><a href="./tokens.html">Tokens</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./contact.html">contact us</a></li>
+        <li>
+          <a href="https://cfdcircle.vn/" target="_blank" class="btnmain"
+            >Download App</a
+          >
+        </li>
+      </ul>
+
+      <img src="./img/blur-m.png" alt="blur-m" class="blur" />
+    </nav>
+
+    <main class="main">
+      <section class="intro">
+        <div class="container">
+          <div class="textbox --center">
+            <h1 class="heading --h1">Blog</h1>
+            <p class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+              nulla suspendisse tortor aenean dis placerat.
+            </p>
+          </div>
+
+          <div class="postslist">
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-1.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Featured</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Crypto Explained With Pros and Cons for Investment
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">John carter</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- sub -->
+      <section class="sub">
+        <div class="container">
+          <div class="sub__text">
+            <img src="./img/ic-env.svg" alt="" />
+            <h2 class="heading --h2">
+              Subscribe to our crypto news weekly newsletter!
+            </h2>
+          </div>
+          <form action="" method="POST" class="sub__form">
+            <input
+              type="text"
+              id="sub"
+              name="sub"
+              placeholder="Enter email address"
+            />
+            <p class="texterror">Please fill in this field</p>
+            <button class="btnmain sub__form-btn" type="submit">
+              SUbscribe
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- lastestposts -->
+      <section class="lastestposts">
+        <div class="container">
+          <div class="textbox --center">
+            <h2 class="heading --h2">Latest Posts</h2>
+
+            <ul class="tabs">
+              <div class="tabs__inner">
+                <li class="tags --active" data-tab="1">all</li>
+                <li class="tags" data-tab="2">Apps</li>
+                <li class="tags" data-tab="3">Products</li>
+                <li class="tags" data-tab="4">Tutorial</li>
+              </div>
+            </ul>
+          </div>
+          <div class="postslist postslist-1 --active">
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Duis aute irure dolor in reprehenderit in voluptate</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Neque porro quisquam est, qui dolorem ipsum dolor...</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-1.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Exercitationem ullam corporis suscipit laboriosam</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Sed quia consequuntur magni dolores eos ratione
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Quis autem vel eum iure reprehenderit qui in eaak
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-4.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Magnam aliquam quaerat voluptatem
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="postslist postslist-2">
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Sed quia consequuntur magni dolores eos ratione
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Quis autem vel eum iure reprehenderit qui in eaak
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-1.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Exercitationem ullam corporis suscipit laboriosam</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-4.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Magnam aliquam quaerat voluptatem
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Duis aute irure dolor in reprehenderit in voluptate</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Neque porro quisquam est, qui dolorem ipsum dolor...</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-1.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Exercitationem ullam corporis suscipit laboriosam</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="postslist postslist-3">
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Duis aute irure dolor in reprehenderit in voluptate</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Neque porro quisquam est, qui dolorem ipsum dolor...</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-1.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Exercitationem ullam corporis suscipit laboriosam</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Sed quia consequuntur magni dolores eos ratione
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Quis autem vel eum iure reprehenderit qui in eaak
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-4.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Magnam aliquam quaerat voluptatem
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="postslist postslist-4">
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Quis autem vel eum iure reprehenderit qui in eaak
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Duis aute irure dolor in reprehenderit in voluptate</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-1.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Exercitationem ullam corporis suscipit laboriosam</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-3.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Sed quia consequuntur magni dolores eos ratione
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/h-article-2.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Neque porro quisquam est, qui dolorem ipsum dolor...</a
+                    >
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="postslist__item">
+              <figure class="postslist__item-thumbnews">
+                <a class="thumb" href="./blog-detail.html">
+                  <img srcset="./img/blog-article-4.png 2x" alt="" />
+                </a>
+              </figure>
+
+              <div class="postslist__item-content">
+                <span class="tags">Products</span>
+
+                <div class="wrapbox">
+                  <h3 class="heading --h3">
+                    <a href="./blog-detail.html"
+                      >Magnam aliquam quaerat voluptatem
+                    </a>
+                  </h3>
+                  <p class="desc">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+
+                <div class="author">
+                  <div class="author__img">
+                    <img src="./img/h-author-4.jpg" alt="" />
+                  </div>
+                  <div class="author__id">
+                    <h5 class="author__id-name">Alex Turner</h5>
+                    <p class="author__id-info">August 2, 2021</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="lastestposts__pagination">
+            <a href="#" class="lastestposts__pagination-btn --back --disable">
+              <img src="./img/ic-arrowleft.svg" alt="" />
+            </a>
+            <ul class="lastestposts__pagination-number">
+              <li>
+                <a class="--active" href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+            </ul>
+            <a href="#" class="lastestposts__pagination-btn --next">
+              <img src="./img/ic-arrowleft.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <a href="./index.html" class="logo">
+            <img src="./img/logo.svg" alt="" />
+          </a>
+
+          <div class="footer__top-social">
+            <div class="socialitem">
+              <a href="#" target="_blank">
+                <img src="./img/ic-ins.svg" alt="" />
+              </a>
+            </div>
+            <div class="socialitem">
+              <a href="https://cfdcircle.vn/" target="_blank">
+                <img src="./img/ic-facebook.svg" alt="" />
+              </a>
+            </div>
+            <div class="socialitem">
+              <a href="#" target="_blank">
+                <img src="./img/ic-linkedin.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__menu">
+          <div class="footer__menu-left">
+            <p class="label">Menu</p>
+            <ul class="menu">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./pricing.html">Pricing</a></li>
+              <li><a href="./tokens.html">Tokens</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./contact.html">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer__menu-right">
+            <p class="label">Download our Application</p>
+            <p class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              sed nulla integer
+            </p>
+            <div class="wrapbtn">
+              <a
+                href="https://www.apple.com/vn/app-store/"
+                target="_blank"
+                class="btnmain"
+              >
+                <svg
+                  width="23"
+                  height="28"
+                  viewBox="0 0 23 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_3_19562)">
+                    <path
+                      d="M2.89196 24.0585C3.90895 25.5224 5.29949 27.5242 7.09357 27.5242V27.5207H7.18498C7.86984 27.4773 8.53946 27.2981 9.15543 26.9933H9.17267C9.95229 26.6122 10.8069 26.4123 11.6735 26.4086C12.5034 26.4177 13.3208 26.613 14.0664 26.9803H14.0716C14.6946 27.2965 15.38 27.4681 16.0774 27.4825H16.1792C17.9841 27.4555 19.1378 25.9386 20.3451 24.1089C21.1739 22.9137 21.8163 21.5979 22.25 20.2071V20.2002C21.5704 19.9119 20.9494 19.4995 20.4184 18.9838C19.832 18.4263 19.3666 17.7526 19.0513 17.005C18.7361 16.2574 18.578 15.452 18.5868 14.6398C18.6038 13.5856 18.8836 12.5526 19.4003 11.6356C19.9169 10.7187 20.654 9.94733 21.5438 9.39223C20.9766 8.57727 20.2289 7.90651 19.3599 7.43302C18.4909 6.95953 17.5245 6.69631 16.537 6.66419C16.3724 6.64942 16.2249 6.6416 16.0989 6.6416C15.0096 6.71056 13.9425 6.98338 12.9523 7.44611H12.9316C12.4223 7.69486 11.8757 7.85691 11.3139 7.92569C10.7214 7.86246 10.1448 7.69391 9.61074 7.42787H9.59177C8.73578 7.01856 7.80992 6.77821 6.86419 6.7198H6.78658C5.63538 6.75628 4.51323 7.09282 3.52964 7.69656C2.54603 8.30031 1.73459 9.15065 1.17449 10.1646C0.0454163 12.3995 -0.282374 14.959 0.246607 17.4095C0.663483 19.782 1.5618 22.0423 2.88536 24.0489L2.89196 24.0585Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M11.1 6.344C11.1889 6.35197 11.2781 6.35546 11.3674 6.35443C12.0995 6.31719 12.8157 6.12494 13.4691 5.79023C14.1225 5.4555 14.6987 4.98583 15.1599 4.41178C16.1822 3.18276 16.6844 1.59846 16.5586 0C15.0035 0.163702 13.5668 0.911959 12.535 2.09555C11.5165 3.26402 11.0004 4.79218 11.1 6.344Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_3_19562">
+                      <rect width="23" height="28" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+                App store</a
+              >
+              <a
+                href="https://play.google.com/store/games"
+                target="_blank"
+                class="btnmain"
+              >
+                <svg
+                  width="23"
+                  height="26"
+                  viewBox="0 0 23 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_3_19571)">
+                    <path
+                      d="M16.5186 16.5949L13.066 13.1357L1.64111 24.7384C1.75032 24.6972 1.85619 24.6476 1.95776 24.59L16.5186 16.5949Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M0.00850522 1.94011C0.0144238 3.35543 0.107148 22.2237 0.116026 23.4134C0.0902982 23.6611 0.125802 23.9113 0.219399 24.142C0.312996 24.3725 0.4618 24.5765 0.652648 24.7357L12.5668 12.6372L0.600367 0.643555C0.393848 0.785546 0.229684 0.981195 0.125431 1.20957C0.0211803 1.43795 -0.0192362 1.69047 0.00850522 1.94011Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M17.1585 8.98145L13.561 12.6345L17.1625 16.2421L22.1124 13.5234C22.7043 13.1957 23.3336 12.3604 22.1124 11.6923L17.1585 8.98145Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M1.95772 0.659347C1.7996 0.5753 1.62738 0.521278 1.44971 0.5L13.0631 12.1343L16.5156 8.62869L1.95772 0.659347Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_3_19571">
+                      <rect
+                        width="23"
+                        height="25"
+                        fill="white"
+                        transform="translate(0 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                PLAY STORE</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">© 2024 CFD Circle, Inc.</p>
+          <div class="backtotop">
+            <svg
+              width="16"
+              height="20"
+              viewBox="0 0 16 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 18.9375L8 1.875M14.5 7.5625L8 1.0625L1.5 7.5625"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./dist/jsmain.min.js"></script>
+    <script src="./dist/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến</title>
+
+    <meta
+      name="title"
+      content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến"
+    />
+    <meta
+      name="description"
+      content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle"
+    />
+    <meta name="keyword" content="" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến"
+    />
+    <meta
+      property="og:description"
+      content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle"
+    />
+    <meta property="og:url" content="https://cfdcircle.vn" />
+    <meta property="og:site_name" content="CFD Circle" />
+    <meta property="og:image" content="thumbnail-facebook" />
+
+    <!-- CSS loading -->
+    <style>
+      .loading {
+        background-color: var(--cl-dark-blue-1);
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        opacity: 1;
+        visibility: visible;
+      }
+      .loading.--loaded {
+        transition: var(--transition);
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loading .loading__progress {
+        width: 160px;
+        height: 4px;
+        background-color: var(--cl-white);
+        position: relative;
+      }
+      .loading .loading__progress .loading__progress-bg {
+        position: absolute;
+        background-color: var(--cl-primary);
+        width: 0;
+        height: 100%;
+      }
+      .loading .loading__percent {
+        font-family: dmb;
+        color: var(--cl-white);
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        letter-spacing: 0;
+      }
+      @media screen and (max-width: 767.98px) {
+        .loading .loading__progress {
+          width: 130px;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="./dist/style.min.css" />
+    <link rel="stylesheet" href="./dist/fonts.css" />
+  </head>
+  <body class="pagenotfound">
+    <!-- loading -->
+    <div class="loading">
+      <div class="loading__progress">
+        <span class="loading__progress-bg"></span>
+      </div>
+      <p class="loading__percent">0%</p>
+    </div>
+
+    <!-- progressbar -->
+    <div class="progressbar"></div>
+
+    <header class="header">
+      <div class="container">
+        <div class="header__left">
+          <a href="./index.html" class="logo">
+            <img src="./img/logo.svg" alt="" />
+          </a>
+
+          <ul class="menu">
+            <li><a class="--active" href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li><a href="./tokens.html">Tokens</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">contact us </a></li>
+          </ul>
+        </div>
+
+        <a
+          href="https://cfdcircle.vn/"
+          target="_blank"
+          class="btnmain header__btn"
+        >
+          Download App
+        </a>
+
+        <div class="header__hamburger">
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- navmobile -->
+    <nav class="menumobile">
+      <ul class="menu">
+        <li><a class="--active" href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+        <li><a href="./tokens.html">Tokens</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./contact.html">contact us</a></li>
+        <li>
+          <a href="https://cfdcircle.vn/" target="_blank" class="btnmain"
+            >Download App</a
+          >
+        </li>
+      </ul>
+
+      <img src="./img/blur-m.png" alt="blur-m" class="blur" />
+    </nav>
+
+    <main>
+      <section class="content">
+        <div class="container">
+          <div class="textbox">
+            <h1 class="number">404</h1>
+            <h2 class="heading --h2">Page Not Found</h2>
+            <p class="desc">
+              The page you're looking for can't be found. Double-check the URL
+              and try again. Or click the button below.
+            </p>
+            <div class="wrapbtn">
+              <a href="./pricing.html" class="btnmain">view pricing</a>
+
+              <a href="./" class="btnmain --bgdark">Go Home</a>
+            </div>
+          </div>
+        </div>
+        <img src="./img/blur.png" alt="" class="blur" />
+      </section>
+    </main>
+
+    <script src="./dist/jsmain.min.js"></script>
+    <script src="./dist/main.js"></script>
+  </body>
+</html>

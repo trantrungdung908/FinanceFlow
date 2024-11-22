@@ -1,0 +1,344 @@
+.aboutpage {
+  // sc intro
+  .intro {
+    padding-top: calc(var(--height-header) + 60px);
+    padding-bottom: 232px;
+    position: relative;
+    .textbox {
+      &.--mid {
+        margin: 0 auto;
+        text-align: center;
+        .desc {
+          max-width: 609px;
+          margin: 21px auto 0 auto;
+        }
+      }
+    }
+    &__details {
+      margin-top: 112px;
+
+      &-list {
+        margin-top: 29px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var((--gap));
+
+        .item {
+          background-color: var(--cl-dark-blue-2);
+          border-radius: 40px;
+          padding: 58px 32px;
+          display: flex;
+          align-items: flex-start;
+          gap: 24px;
+          &__text {
+            &-label {
+              color: var(--cl-white);
+              font-size: var(--fs-label);
+              line-height: var(--lh-label);
+              letter-spacing: var(--ls-label);
+              text-transform: uppercase;
+              font-family: dmb;
+              margin-bottom: 7px;
+            }
+            &-desc {
+              color: var(--cl-white);
+              font-size: var(--fs-body);
+              line-height: var(--lh-body);
+              font-family: dmr;
+              letter-spacing: var(--ls-body);
+            }
+          }
+        }
+      }
+    }
+
+    .blur {
+      top: 0;
+      left: 0;
+      transform: translateX(-20%);
+    }
+
+    @include minW(2560px) {
+      .blur {
+        transform: translateX(10%);
+      }
+    }
+    @include sm {
+      .textbox {
+        &.--mid {
+          .desc {
+            max-width: 422px;
+          }
+        }
+      }
+      &__details {
+        margin-top: 80px;
+      }
+    }
+
+    @include xs {
+      padding-top: calc(var(--height-header) + 48px);
+      padding-bottom: 59px;
+      overflow-x: hidden;
+      .textbox {
+        &.--mid {
+          text-align: start;
+          margin: initial;
+          .desc {
+            max-width: 320px;
+            margin: 16px 0 0 0;
+          }
+        }
+      }
+
+      &__details {
+        margin-top: 42px;
+        .textbox {
+          &.--center {
+            .desc {
+              max-width: 330px;
+            }
+          }
+        }
+        &-list {
+          grid-template-columns: 1fr;
+          gap: var(--gutter);
+          margin-top: var(--gutter);
+          .item {
+            flex-direction: column;
+          }
+        }
+      }
+      .blur {
+        top: -10%;
+        transform: translateX(-50%);
+        max-width: initial;
+      }
+    }
+  }
+
+  // sc mission
+  .mission {
+    overflow: hidden;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--gutter);
+    }
+    &__info {
+      grid-column: 1/8;
+      max-width: 607px;
+      &-item {
+        .textbox {
+          .desc {
+            margin-top: 16px;
+          }
+        }
+        &:last-child {
+          margin-top: 78px;
+        }
+      }
+    }
+    &__img {
+      grid-column: 8/13;
+      img {
+        max-width: initial;
+      }
+    }
+    &__planet {
+      display: none;
+    }
+
+    @include xs {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      &__info {
+        grid-column: initial;
+        &-item {
+          max-width: initial;
+          &:last-child {
+            margin-top: 65px;
+          }
+        }
+      }
+
+      &__img {
+        display: none;
+      }
+
+      &__planet {
+        margin-top: 90px;
+        display: block;
+      }
+    }
+  }
+
+  // sc timeline
+  .timeline {
+    padding-top: 256px;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--gutter);
+    }
+    &__left {
+      grid-column: 1/5;
+      position: sticky;
+      top: var(--height-header);
+      align-self: flex-start;
+      .textbox {
+        .desc {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    &__right {
+      grid-column: 6 / 13;
+      &-item {
+        &:not(:first-child) {
+          margin-top: 60px;
+        }
+        .boxes {
+          color: var(--cl-white);
+          padding-left: 78px;
+          padding-bottom: 40px;
+          border-bottom: 1px solid var(--cl-white);
+          position: relative;
+          &__year {
+            font-family: dmb;
+            font-size: 2.8rem;
+            line-height: 3rem;
+            letter-spacing: 0.028rem;
+          }
+          &__title {
+            font-family: dmb;
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            letter-spacing: 0.09rem;
+            margin: 22px 0 12px;
+            text-transform: uppercase;
+          }
+          &::before {
+            position: absolute;
+            content: "";
+            @include size(24px, 24px, true);
+            background-color: var(--cl-white);
+            top: 3px;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    @include xs {
+      padding-top: 104px;
+
+      .container {
+        grid-template-columns: 1fr;
+      }
+      &__left {
+        grid-column: initial;
+        position: static;
+        margin-bottom: 40px;
+      }
+      &__right {
+        grid-column: initial;
+        &-item {
+          &:not(:first-child) {
+            margin-top: 56px;
+          }
+
+          .boxes {
+            padding-left: 38px;
+            &__year {
+              line-height: 2.5rem;
+            }
+            &::before {
+              @include size(18px, 18px, true);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // sc team
+  .team {
+    padding-top: 159px;
+    &__list {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 38px;
+      &-item {
+        background-color: var(--cl-dark-blue-2);
+        border-radius: 40px;
+        overflow: hidden;
+        padding: 24px;
+        .teamimg {
+          @include frameimg(327, 400);
+          border-radius: 32px;
+          img {
+            @include midimg();
+          }
+        }
+        .infor {
+          color: var(--cl-white);
+          text-align: center;
+          margin-top: 32px;
+          &__name,
+          &__role {
+            text-transform: uppercase;
+          }
+          &__role {
+            font-family: dmr;
+            margin-top: 14px;
+          }
+        }
+      }
+    }
+
+    @include xs {
+      padding-top: 104px;
+
+      &__list {
+        margin-top: 40px;
+        grid-template-columns: 1fr;
+        gap: var(--gutter);
+        &-item {
+          .infor {
+            &__role {
+              margin-top: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // investors
+  .investors {
+    padding: 159px 0 230px;
+    .textbox {
+      max-width: 496px;
+      margin: 0 auto;
+      text-align: center;
+      .desc {
+        margin-top: 16px;
+      }
+    }
+    .company {
+      margin-top: 41px;
+    }
+
+    @include xs {
+      padding: 80px 0;
+      .company {
+        margin-top: 48px;
+      }
+    }
+  }
+}

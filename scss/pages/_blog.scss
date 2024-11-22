@@ -1,0 +1,214 @@
+.blogpage {
+  .intro {
+    padding: calc(var(--height-header) + 70px) 0 92px 0;
+    .textbox {
+      .desc {
+        max-width: 568px;
+      }
+    }
+
+    .postslist {
+      grid-template-columns: 1fr;
+      margin-top: 48px;
+      margin-bottom: initial;
+      &__item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        &-thumbnews {
+          order: 2;
+          overflow: hidden;
+        }
+        &-content {
+          padding: 58px 78px 58px 47px;
+          .tags {
+            position: relative;
+            top: initial;
+            transform: initial;
+            left: initial;
+            margin-bottom: 21px;
+          }
+          .wrapbox {
+            margin-bottom: initial;
+            .heading {
+              font-size: 2.8rem;
+              letter-spacing: 0.028rem;
+              line-height: 4rem;
+            }
+          }
+          .author {
+            display: none;
+          }
+        }
+      }
+    }
+    @include xs {
+      padding: calc(var(--height-header) + 48px) 0 80px 0;
+      .textbox {
+        .desc {
+          max-width: 100%;
+        }
+      }
+
+      .postslist {
+        &__item {
+          grid-template-columns: 1fr;
+          &-content {
+            padding: 43px 31px 34px 23px;
+            order: 2;
+            .tags {
+              position: absolute;
+              top: 0;
+              transform: translateY(-50%);
+              left: 23px;
+            }
+            .wrapbox {
+              margin-bottom: 71px;
+              .heading {
+                font-size: 2.2rem;
+                line-height: 3.1rem;
+              }
+              .desc {
+                @include overtext(initial);
+              }
+            }
+            .author {
+              display: flex;
+              &::after {
+                top: -38px;
+              }
+            }
+          }
+        }
+        // ----
+      }
+    }
+  }
+
+  // sub
+  .sub {
+    padding: 84px 0;
+
+    @include xs {
+      padding: 80px 0;
+    }
+  }
+
+  // lastestpost
+  .lastestposts {
+    padding-top: 148px;
+    padding-bottom: 80px;
+
+    .textbox {
+      .tabs {
+        &__inner {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          cursor: pointer;
+          .tags {
+            position: relative;
+            height: 40px;
+            font-size: var(--fs-body-small);
+            line-height: var(--lh-body-small);
+            letter-spacing: var(--ls-body-small);
+            font-family: dmr;
+            padding: 0 24px;
+            text-transform: capitalize;
+            background-color: rgba(255, 255, 255, 0.1);
+            @include transition(var(--transition));
+            &.--active {
+              background-color: var(--cl-primary);
+            }
+            &:hover {
+              background-color: var(--cl-primary);
+            }
+          }
+        }
+      }
+    }
+    .postslist {
+      margin-top: 56px;
+      margin-bottom: 26px;
+      display: none;
+      &.--active {
+        display: grid;
+      }
+    }
+
+    &__pagination {
+      @include mid(true);
+      gap: 16px;
+
+      &-btn {
+        @include size(36px, 36px, true);
+        @include mid(true);
+        @include transition(var(--transition));
+        background-color: var(--cl-dark-blue-2);
+        cursor: pointer;
+        position: relative;
+        img {
+          position: absolute;
+          left: 15px;
+          top: 10px;
+        }
+        &.--back {
+          img {
+            transform: rotate(180deg);
+            left: 13px;
+          }
+        }
+
+        &.--disable {
+          background-color: rgba(255, 255, 255, 0.1);
+          pointer-events: none;
+          img {
+            opacity: 0.1;
+          }
+        }
+        &:hover {
+          background-color: var(--cl-primary);
+        }
+        &.--disable:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+      &-number {
+        @include mid(true);
+        li {
+          a {
+            padding: 0 12px;
+            color: var(--cl-white);
+            @include transition(var(--transition));
+            &:hover {
+              color: var(--cl-primary);
+            }
+            &.--active {
+              color: var(--cl-primary);
+            }
+          }
+        }
+      }
+    }
+
+    @include xs {
+      padding-top: 80px;
+      .textbox {
+        flex-direction: column;
+        gap: 24px;
+        .tabs {
+          width: 100%;
+          &__inner {
+            flex-direction: column;
+            .tags {
+              width: 100%;
+              height: 48px;
+            }
+          }
+        }
+      }
+      .postslist {
+        margin: 24px 0 16px 0;
+      }
+    }
+  }
+}
